@@ -1,0 +1,152 @@
+/* 1. Global Page Reset & Fonts */
+/* Shared styling for ALL project titles */
+.portfolio {
+    color: #000000;          /* Same solid black color for both */
+    font-weight: 700;        /* Same bold thickness */
+    text-decoration: none;   /* No default underline */
+}
+
+/* Hover effect ONLY for titles that are clickable links */
+a.portfolio:hover {
+    color: #3498db;          /* Turns blue when hovered */
+    text-decoration: underline;
+}
+/* 1. All links on the page (Body, Sections, Footer) */
+a {
+    color: #000000;          /* Black text */
+    text-decoration: none;   /* Removes underline */
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* Hover color for body links */
+a:hover {
+    color: #3498db;          /* Turns blue on hover */
+    text-decoration: underline;
+}
+
+/* 2. Specific style ONLY for links inside the Header */
+header a {
+    color: #ffffff;          /* White text for contrast against the blue banner */
+    border: 1px solid #ffffff; /* Adds a clean border around the link */
+    padding: 6px 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+header a:hover {
+    background-color: #ffffff;
+    color: #2c3e50;          /* Inverts colors when hovering over the header link */
+    text-decoration: none;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5; /* Slightly cooler gray background */
+    color: #2d3748;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. Header Banner Styling */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Smooth blue gradient */
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    color: #ffffff; /* Override heading color for header */
+    margin-bottom: 8px;
+}
+
+/* 3. Section Cards with Hover Animation */
+section, footer {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover transition */
+}
+
+/* Subtle card lift when hovering */
+section:hover, footer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Headings & Text Accent */
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db; /* Blue underline below section headings */
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+/* Step 1: Turn the project list into a responsive grid */
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px; /* Adds space between grid cards */
+}
+
+/* Step 1: Updated project card styling */
+li {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #3498db; /* Blue accent bar across the top of each card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Adds breathing room on the left and right of the separator */
+.separator {
+    margin: 0 8px;
+    color: #a0aec0; /* Soft gray color so it doesn't overpower the links */
+}
+
+/* Step 2: Interactive Button Style */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3498db;  /* Primary button color */
+    color: #ffffff;             /* Text color */
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Button Hover State */
+.btn:hover {
+    background-color: #2980b9;  /* Darker blue on hover */
+    transform: translateY(-2px); /* Subtle button lift */
+    color: #ffffff;
+}
+
+/* 1. Define the animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px lower and invisible */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* Moves to normal position and fully visible */
+    }
+}
+
+/* 2. Apply the animation to the Header and Sections */
+header, section, footer {
+    animation: fadeInUp 0.8s ease-out; /* Runs automatically on page load */
+}
